@@ -23,14 +23,14 @@ void add(char nome[],int prioridade,int burst){
     insert(&head, t);   // coloca as tarefas na lista de nós(de list.c e list.h do dowload do livro)
 }
 
-/*void schedule(){
+void schedule(){
  //printf("Teste função schedule em sjf\n");
 
     while(head != NULL){
         struct node *temp = head;
         struct node *minNode = head;
         /*Cria um novo nó e armazena a task do arquivo, um por um. armazenando um temporario e um minimo
-        Para comparar e decidir qual o com menor tempo
+        Para comparar e decidir qual o com menor tempo*/
 
         while(temp != NULL){
             if(temp->task->burst < minNode->task->burst){//compara o tempo de cpu do atual que leu(temp) com o menor armazenado(min)
@@ -41,7 +41,7 @@ void add(char nome[],int prioridade,int burst){
     
 
     run(minNode->task, minNode->task->burst);/*roda a função run do dowload do livro que printa a task que ta rodando e as informações 
-                                                da task, simulando uma cpu
+                                                da task, simulando uma cpu*/
     delete(&head, minNode->task);
         // e por fim deleta a task que acabou de rodar da lista e da free na memória
     free(minNode->task->name);

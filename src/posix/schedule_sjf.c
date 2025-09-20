@@ -39,12 +39,9 @@ void schedule(){
             temp = temp->next;// no fim ele passa para o próximo nó para encadear 
         }
     
-
     run(minNode->task, minNode->task->burst);/*roda a função run do dowload do livro que printa a task que ta rodando e as informações 
                                                 da task, simulando uma cpu*/
     delete(&head, minNode->task);
-        // e por fim deleta a task que acabou de rodar da lista e da free na memória
-    free(minNode->task->name);
-    free(minNode->task);
+        // e por fim deleta a task que acabou de rodar da lista
     }
 }

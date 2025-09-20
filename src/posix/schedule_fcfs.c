@@ -34,11 +34,43 @@ struct node* prox = NULL;
         atual->next = temp;
         temp = atual;
         atual = prox;
-    }
-    // sendo temp a cabeça da lista invertida, que é a ordem de qual chegou primeiro
+    }   // sendo temp a cabeça da lista invertida, que é a ordem de qual chegou primeiro
+    
 
-    while(temp != NULL){//passa por toda a lista até terminar
+        int count=0, tempoGlobal=0;
+        int Temp_espera, Temp_resposta, Temp_TurnAr;
+        float TT_espera=0, TT_resposta=0, TT_TurnAr=0;
+
+    while(temp != NULL){ //passa por toda a lista até terminar
         run(temp->task, temp->task->burst);/*roda a função run do dowload do livro que printa a task que ta rodando e as informações da task, simulando uma cpu*/
+        
+        Temp_espera = tempoGlobal;
+        Temp_resposta = tempoGlobal;
+        Temp_TurnAr = tempoGlobal + temp->task->burst;
+
+        TT_espera = TT_espera + Temp_espera;
+        TT_resposta = TT_resposta + Temp_resposta;
+        TT_TurnAr = TT_TurnAr + Temp_TurnAr;
+
+        tempoGlobal = tempoGlobal + temp->task->burst;        
+        count++;
+
         delete(&temp, temp->task); //deleta a task que acabou de rodar
     }
+
+    printf("\nMedia tempo de turnaround: %.3f", (TT_TurnAr/count));
+    printf("\nMedia tempo de espera: %.3f", (TT_espera/count));
+    printf("\nMedia tempo de resposta: %.3f", (TT_resposta/count));
 }
+
+/* Calcular a média do tempo de turnaround, espera e resposta pra todos os algorítimos
+turnaround vai ser sempre o tempo de conclusão do processo, porque todos os procesos chegam ao mesmo tempo, como o livro pediu, então TAT=t.conclusão - t.chegada(0)
+tempo para começar + burst
+
+tempo de espera vai ser o (tempo de conclusão - tempo de burst), porque todos chegam ao mesmo tempo. o tempo total que ele esperou para ser completamente executado
+tempo de completar(começar+burst) - burst -> tempos de começar no caso de fcfs e sjf
+
+tempo de resposta é o tempo de espera até ser executado pela primeira vez
+tempo para começar
+    no caso de fcfs o tempo de resposta e de espera é o mesmo, mas em round robin é diferente
+*/

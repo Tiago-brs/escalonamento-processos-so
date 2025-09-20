@@ -12,7 +12,7 @@ struct node *head = NULL;
 
 
 void add(char nome[],int prioridade,int burst){
- //printf("Teste função add \n");
+ printf("Teste função add \n");
 
     Task *t = malloc(sizeof(Task));
     t->name = strdup(nome);
@@ -24,7 +24,7 @@ void add(char nome[],int prioridade,int burst){
 }
 
 void schedule(){
- //printf("Teste função schedule em sjf\n");
+ printf("Teste função schedule em sjf\n");
 
     while(head != NULL){
         /*Cria um novo nó e armazena a task do arquivo, um por um. armazenando um temporario e um minimo

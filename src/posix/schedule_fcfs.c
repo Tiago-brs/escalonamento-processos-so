@@ -24,19 +24,11 @@ void add(char nome[],int prioridade,int burst){
 }
 
 void schedule(){
- printf("Teste função schedule em sjf\n");
-
-    while(head != NULL){
-        /*Cria um novo nó e armazena a task do arquivo, um por um. armazenando um temporario e um minimo
-        Para comparar e decidir qual o com menor tempo*/
-
+ //printf("Teste função schedule em sjf\n");
     
+    while(head != NULL){//passa por toda a lista até terminar
+        run(head->task, head->task->burst);/*roda a função run do dowload do livro que printa a task que ta rodando e as informações da task, simulando uma cpu*/
+        head = head->next;
 
-    run(head->task, head->task->burst);/*roda a função run do dowload do livro que printa a task que ta rodando e as informações 
-                                                da task, simulando uma cpu*/
-    delete(&head, head->task);
-        // e por fim deleta a task que acabou de rodar da lista e da free na memória
-    free(head->task->name);
-    free(head->task);
     }
 }

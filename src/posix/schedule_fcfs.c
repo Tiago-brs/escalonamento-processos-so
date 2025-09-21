@@ -60,7 +60,7 @@ struct node* prox = NULL;
 
     printf("\nMedia tempo de turnaround: %.3f", (TT_TurnAr/count));
     printf("\nMedia tempo de espera: %.3f", (TT_espera/count));
-    printf("\nMedia tempo de resposta: %.3f", (TT_resposta/count));
+    printf("\nMedia tempo de resposta: %.3f\n", (TT_resposta/count));
 }
 
 /* Calcular a média do tempo de turnaround, espera e resposta pra todos os algorítimos

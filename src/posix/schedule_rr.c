@@ -14,7 +14,7 @@
 
 #define QUANTUM 10
 
-int tid = 1;                 // contador global de ids (como nos outros arquivos)
+int tid = 1;                 // contador global de ids 
 struct node *head = NULL;    // início da lista de tarefas
 
 // Adiciona uma nova tarefa à lista
@@ -32,7 +32,7 @@ void schedule() {
     struct node *temp = head;
     struct node *fila = NULL;
 
-    // Inverter a lista para manter ordem de chegada (igual FCFS)
+    // Inverter a lista para manter ordem de chegada 
     while (temp != NULL) {
         struct node *prox = temp->next;
         temp->next = fila;

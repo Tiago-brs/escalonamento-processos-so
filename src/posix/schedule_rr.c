@@ -87,7 +87,7 @@ void schedule() {
         }
     }
 
-    printf("\nMédia Turnaround: %.3f", TT_turnaround / tid - 1);
-    printf("\nMédia Espera: %.3f", TT_espera / tid - 1);
-    printf("\nMédia Resposta: %.3f\n", TT_resposta / tid - 1);
+    printf("\nMédia Turnaround: %.3f", TT_turnaround / (tid - 1));
+    printf("\nMédia Espera: %.3f", TT_espera / (tid - 1));
+    printf("\nMédia Resposta: %.3f\n", TT_resposta / (tid - 1));
 }

@@ -1,6 +1,8 @@
 # escalonamento-processos-so
 Implementação de algoritmos de escalonamento de processos em C, capitulo 5 do livro(FCFS, SJF, Prioridade, Round Robin, Prioridade com Round Robin).
 
+Usamos, como o livro pediu, o download da base do projeto, que tinha o makefile e outras coisas importantes para simular a cpu e usar como código, o README dentro da pasta posix é o README do livro que veio com a pasta de download, assim como o makefile e os códigos que não são os código dos algoritimos.
+
 Projeto com os arquivos de download do capitulo 5 do livro, cada algoritimo está em um arquivo .c diferente, 
 (schedule_sjf.c, schedule_fcfs.c, schedule_priority.c, schedule_priority_rr.c, schedule_rr.c).
 

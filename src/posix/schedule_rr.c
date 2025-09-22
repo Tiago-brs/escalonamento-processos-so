@@ -41,7 +41,6 @@ void schedule() {
     }
 
     int tempoGlobal = 0;
-    int count = 0;
     float TT_turnaround = 0, TT_espera = 0, TT_resposta = 0;
 
     // Marca se já rodou (para calcular tempo de resposta)

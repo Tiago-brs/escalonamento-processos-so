@@ -22,3 +22,7 @@ void add(char nome[],int prioridade,int burst){
 
     insert(&head, t);   // coloca as tarefas na lista de nós(de list.c e list.h do dowload do livro)
 }
+
+void schedule(){
+ 
+}

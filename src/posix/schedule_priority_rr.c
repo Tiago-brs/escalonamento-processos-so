@@ -30,7 +30,7 @@ void add(char name[], int priority, int burst) {
 
 // Função auxiliar: encontra a maior prioridade na lista
 static int maiorPrioridade(struct node *lista) {
-    int max = -9999;
+    int max = 0;
     while (lista) {
         if (lista->task->priority > max) {
             max = lista->task->priority;

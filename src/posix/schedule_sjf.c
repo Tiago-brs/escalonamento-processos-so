@@ -48,14 +48,14 @@ void schedule(){
     
     Temp_espera = tempoGlobal;
     Temp_resposta = tempoGlobal;
-    Temp_TurnAr = tempoGlobal + minNode->task->burst;
+    Temp_TurnAr = tempoGlobal + minNode->task->burst;   //calcula e armazena o tempo de espera, resposta e turnaround da task que rodou
 
     TT_espera = TT_espera + Temp_espera;
     TT_resposta = TT_resposta + Temp_resposta;
-    TT_TurnAr = TT_TurnAr + Temp_TurnAr;
+    TT_TurnAr = TT_TurnAr + Temp_TurnAr;        //Adiciona os tempos de resposta, espera e turnaround a soma total
 
     tempoGlobal = tempoGlobal + minNode->task->burst;        
-    count++;
+    count++;    //soma ao contador de tasks, pra tirar a média depois
     
     delete(&head, minNode->task);
         // e por fim deleta a task menor que acabou de rodar da lista, e volta o while para a próxima task da lista e compara tudo de novo
@@ -63,5 +63,5 @@ void schedule(){
 
     printf("\nMedia tempo de turnaround: %.3f", (TT_TurnAr/count));
     printf("\nMedia tempo de espera: %.3f", (TT_espera/count));
-    printf("\nMedia tempo de resposta: %.3f\n", (TT_resposta/count));
+    printf("\nMedia tempo de resposta: %.3f\n", (TT_resposta/count));   //printa todas as médias dos tempos de espera, turnaround e resposta
 }

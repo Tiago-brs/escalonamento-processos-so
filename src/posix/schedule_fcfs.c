@@ -46,19 +46,19 @@ struct node* prox = NULL;
         
         Temp_espera = tempoGlobal;
         Temp_resposta = tempoGlobal;
-        Temp_TurnAr = tempoGlobal + temp->task->burst;
+        Temp_TurnAr = tempoGlobal + temp->task->burst;  //calcula e armazena o tempo de espera, resposta e turnaround da task que rodou
 
         TT_espera = TT_espera + Temp_espera;
         TT_resposta = TT_resposta + Temp_resposta;
-        TT_TurnAr = TT_TurnAr + Temp_TurnAr;
+        TT_TurnAr = TT_TurnAr + Temp_TurnAr;        //Adiciona os tempos de resposta, espera e turnaround a soma total
 
-        tempoGlobal = tempoGlobal + temp->task->burst;        
-        count++;
+        tempoGlobal = tempoGlobal + temp->task->burst;  //atualiza o tempo global, que seria o tempo real simulado, com base na task que acabou de rodas
+        count++; //soma ao contador de tasks, pra tirar a média depois
 
         delete(&temp, temp->task); //deleta a task que acabou de rodar
     }
 
-    printf("\nMedia tempo de turnaround: %.3f", (TT_TurnAr/count));
+    printf("\nMedia tempo de turnaround: %.3f", (TT_TurnAr/count));     //printa todas as médias dos tempos de espera, turnaround e resposta
     printf("\nMedia tempo de espera: %.3f", (TT_espera/count));
     printf("\nMedia tempo de resposta: %.3f\n", (TT_resposta/count));
 }

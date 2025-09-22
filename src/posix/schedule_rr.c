@@ -1,7 +1,6 @@
 /**
  * schedule_rr.c
  * Implementação do algoritmo Round Robin
- * Baseado no padrão dos arquivos fcfs e sjf.
  */
 
 #include <stdio.h>
